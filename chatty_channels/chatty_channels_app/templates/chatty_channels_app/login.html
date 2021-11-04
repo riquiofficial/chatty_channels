@@ -1,0 +1,17 @@
+{%extends 'chatty_channels_app/base.html'%} {%block content%}
+<div class="container">
+  <h1>Welcome to Chatty Channels!</h1>
+  <h3>Please Login...</h3>
+  <form method="POST">
+    {%csrf_token%}
+    <label class="padding-default" for="username">Username: </label>
+    <input class="padding-default" placeholder="Username" type="text" name="username" />
+
+    <label class="padding-default" for="password">Password: </label>
+    <input class="padding-default" placeholder="Password" type="password" name="password" />
+
+    <button class="padding-default margin-default-y" type="submit">Submit</button>
+  </form>
+  <a href="{%url 'signup'%}"><button>Create an account</button></a>
+</div>
+{%endblock%}

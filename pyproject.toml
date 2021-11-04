@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "chatty_channels"
+version = "0.1.0"
+description = "Testing a chat app with Django Channels"
+authors = ["Richard Quigley <rquigley@taylorhopkinson.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.26.0"
+Django = "^3.2.8"
+django-channels = "^0.7.0"
+channels = "^3.0.4"
+django-rest-framework = "^0.1.0"
+django-environ = "^0.8.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

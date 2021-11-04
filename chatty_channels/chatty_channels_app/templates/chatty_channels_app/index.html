@@ -1,0 +1,16 @@
+{%extends 'chatty_channels_app/base.html'%} {%block content%}
+<div class="container">
+  <h1>Welcome to Chatty Channels, {{username}}!</h1>
+  <h3>Create/Join a Room</h3>
+  <form method="POST">
+    {%csrf_token%}
+    <label class="padding-default" for="room">Room Name: </label>
+    <input class="padding-default" placeholder="Room Name" type="text" name="room" />
+
+    <button class="padding-default margin-default-y" type="submit">Enter</button>
+  </form>
+  <a href="{% url 'signout' %}">
+      <button class="padding-default" type="submit">Log Out</button>
+    </a>
+</div>
+{%endblock%}
