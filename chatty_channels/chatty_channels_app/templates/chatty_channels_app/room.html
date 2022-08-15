@@ -4,9 +4,9 @@
   <h1>You're in <span id="room" data-id="{{room.id}}">{{room.name}}</span></h1>
   <h3>Happy chatting!</h3>
   <div id="chat-log">
-    <!-- {%for message in chat_messages%}
+    {%for message in chat_messages%}
         <p><span class="bold">{{message.sender}}</span>: {{message.body}}, <span class="text-sm italic">{{message.timestamp}}</span></p>
-    {%endfor%} -->
+    {%endfor%}
   </div>
   
   <!-- <form method="POST"> -->
@@ -37,7 +37,7 @@
 
     chatSocket.onmessage = (e) => {
         const data = JSON.parse(e.data);
-        document.querySelector('#chat-log').innerHTML += `<p>${data.message}</p>`;
+        document.querySelector('#chat-log').innerHTML += `<p><span class="bold">${data.user}</span>: ${data.message}, <span class="text-sm italic">${data.timestamp}</span></p>`
     };
 
     chatSocket.onclose = (e) => {
@@ -55,6 +55,7 @@
         const messageInputDom = document.querySelector('#chat-message-input');
         const message = messageInputDom.value;
         chatSocket.send(JSON.stringify({
+            'user': `${'{{user.id}}'}`,
             'message': message
         }));
         messageInputDom.value = '';
