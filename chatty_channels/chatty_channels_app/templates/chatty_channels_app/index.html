@@ -9,8 +9,6 @@
 
     <button class="padding-default margin-default-y" type="submit">Enter</button>
   </form>
-  <a href="{% url 'signout' %}">
-      <button class="padding-default" type="submit">Log Out</button>
-    </a>
+  {%include 'chatty_channels_app/signout-button.html' %}
 </div>
 {%endblock%}
