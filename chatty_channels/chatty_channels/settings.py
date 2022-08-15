@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL = "/login/"
+
 
 # Application definition
 
@@ -41,8 +43,17 @@ INSTALLED_APPS = [
     'chatty_channels_app'
 ]
 
-ASGI_APPLICATION = "chatty_channels.asgi.application"
 WSGI_APPLICATION = 'chatty_channels.wsgi.application'
+ASGI_APPLICATION = "chatty_channels.asgi.application"
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -71,7 +82,6 @@ TEMPLATES = [
         },
     },
 ]
-
 
 
 # Database
