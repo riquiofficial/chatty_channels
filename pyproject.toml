@@ -5,7 +5,7 @@ description = "Testing a chat app with Django Channels"
 authors = ["Richard Quigley <rquigley@taylorhopkinson.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8.9"
 requests = "^2.26.0"
 Django = "^3.2.8"
 django-channels = "^0.7.0"
@@ -17,5 +17,5 @@ channels-redis = "^3.4.1"
 [tool.poetry.dev-dependencies]
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=1.1.15"]
 build-backend = "poetry.core.masonry.api"
