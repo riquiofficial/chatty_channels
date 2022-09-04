@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-(786b3&+albz=awdvph%h^)zk-!g=^9*m5_*l74z(7w!n=uy&n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "chatty-channels.onrender.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "chatty-channels.onrender.com"]
 
 LOGIN_URL = "/login/"
 
